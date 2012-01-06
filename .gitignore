@@ -11,7 +11,7 @@ Sonar/
 reports/
 target/
 .bundle/
-
+vendor/
 #ignore tmp files at all
 tmp/
 tmp*/
