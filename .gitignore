@@ -1,0 +1,34 @@
+#ignore IntelliJ project files
+*.iml
+*.iws
+*.ipr
+.idea/*
+.idea
+
+#ignore build outputs, buildr test report and db folder
+out/
+Sonar/
+reports/
+target/
+.bundle/
+
+#ignore tmp files at all
+tmp/
+tmp*/
+*.log
+
+#ignore some file in functionaltest
+.DS_Store
+**/.DS_Store
+
+#ignore jmeter and other tools
+tools/
+
+#ignore vi undo and swap files
+*.swp
+*.un~
+*.swo
+
+
+#ignore vagrant folder
+.vagrant
