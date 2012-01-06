@@ -1,4 +1,5 @@
 #!/bin/bash
+#set -x
 
 function load_rvm {
 	[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
@@ -14,9 +15,17 @@ function check_rvm {
 	load_rvm
 }
 
+function install_ruby {
+	rvm install 1.8.7-p352
+	rvm use 1.8.7-p352
+	rvm gemset create spring
+	rvm use 1.8.7-p352@spring
+}
+
 function main {
 	case $1 in
 		check_rvm) check_rvm;;
+		install_ruby) install_ruby;;
 		*) exit 1;;
 	esac
 }
