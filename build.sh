@@ -15,6 +15,7 @@ function check_rvm {
 	load_rvm
 }
 
+
 function install_ruby {
 	rvm install 1.8.7-p352
 	rvm use 1.8.7-p352
@@ -22,10 +23,15 @@ function install_ruby {
 	rvm use 1.8.7-p352@spring
 }
 
+function check_ruby {
+    rvm list | grep 1.8.7-p352 > /dev/null || install_ruby
+	rvm use 1.8.7-p352@spring
+}
+
 function main {
 	case $1 in
 		check_rvm) check_rvm;;
-		install_ruby) install_ruby;;
+		check_ruby) check_ruby;;
 		*) exit 1;;
 	esac
 }
