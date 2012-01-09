@@ -10,3 +10,16 @@ SPRING = struct(
     :mvc => transitive("org.springframework:spring-webmvc:jar:#{SPRING_VERSION}"),
     :test => "org.springframework:spring-test:jar:#{SPRING_VERSION}"
 )
+
+JUNIT = 'junit:junit:jar:4.10'
+
+define 'spring' do
+
+  define 'app' do
+    BASIC_DEPENDENCE = struct(
+    :mvc => SPRING.mvc,
+    :junit => JUNIT
+    )
+  compile.with BASIC_DEPENDENCE
+  end
+end
